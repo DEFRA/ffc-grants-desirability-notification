@@ -1,8 +1,8 @@
 {
-  "name": "ffc-template-node",
-  "version": "0.1.0",
-  "description": "description-of-project-goes-here",
-  "homepage": "https://github.com/DEFRA/ffc-template-node",
+  "name": "ffc-grants-desirability-notification",
+  "version": "1.0.0",
+  "description": "Notification sender for submitted EOIs",
+  "homepage": "https://github.com/DEFRA/ffc-grants-desirability-notification",
   "main": "app/index.js",
   "scripts": {
     "test": "jest --runInBand",
