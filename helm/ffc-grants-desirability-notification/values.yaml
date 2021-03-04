@@ -27,6 +27,7 @@ container:
   readOnlyRootFilesystem: true
   allowPrivilegeEscalation: false
   port: 3000
+  notifyApiKey: dummy-helm-value
 
 livenessProbe:
   path: /healthz

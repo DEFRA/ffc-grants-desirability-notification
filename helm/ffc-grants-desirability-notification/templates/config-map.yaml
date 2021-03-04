@@ -3,4 +3,5 @@
 data:
   NODE_ENV: {{ quote .Values.environment }}
   PORT: {{ quote .Values.container.port }}
+  NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
 {{- end -}}
