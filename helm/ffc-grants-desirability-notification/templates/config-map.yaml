@@ -6,4 +6,5 @@ data:
   NOTIFY_API_KEY: {{ quote .Values.container.notifyApiKey }}
   DESIRABILITY_SUBMITTED_TOPIC_ADDRESS: {{ quote .Values.container.desirabilitySubmittedTopicAddress }}
   DESIRABILITY_SUBMITTED_SUBSCRIPTION_ADDRESS: {{ quote .Values.container.desirabilitySubmittedSubscriptionAddress }}
+  SERVICE_BUS_HOST: {{ quote .Values.container.messageQueueHost }}
 {{- end -}}
