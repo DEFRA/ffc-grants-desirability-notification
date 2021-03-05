@@ -8,7 +8,7 @@ const sharedConfig = {
 
 module.exports = {
   notificationSubscription: {
-    address: process.env.DESIRABILITY_NOTIFICATION_SUBSCRIPTION_ADDRESS,
+    address: process.env.DESIRABILITY_SUBMITTED_SUBSCRIPTION_ADDRESS,
     topic: process.env.DESIRABILITY_SUBMITTED_TOPIC_ADDRESS,
     type: 'subscription',
     ...sharedConfig
