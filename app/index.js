@@ -1,7 +1,8 @@
 const server = require('./server')
+require('dotenv-extended').load({ errorOnMissing: true })
 
 const init = async () => {
-  const { notifyApiKey } = require('./config/general')
+  const { notifyApiKey } = require('./config')
   console.log(`Using Notify API key: ${notifyApiKey}`)
 
   const sendEmailAction = require('./messaging/send-email')

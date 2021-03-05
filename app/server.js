@@ -1,4 +1,5 @@
 const Hapi = require('@hapi/hapi')
+require('dotenv-extended').load({ errorOnMissing: true })
 
 const server = Hapi.server({
   port: process.env.PORT

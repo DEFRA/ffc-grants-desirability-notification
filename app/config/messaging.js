@@ -1,3 +1,5 @@
+require('dotenv-extended').load({ errorOnMissing: true })
+
 const sharedConfig = {
   appInsights: require('applicationinsights'),
   host: process.env.SERVICE_BUS_HOST,

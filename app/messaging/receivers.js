@@ -1,4 +1,4 @@
-const msgCfg = require('../config/messaging')
+const msgCfg = require('../config/')
 const { MessageReceiver } = require('ffc-messaging')
 
 let submissionReceiver
