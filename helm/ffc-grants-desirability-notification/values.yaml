@@ -28,6 +28,9 @@ container:
   allowPrivilegeEscalation: false
   port: 3000
   notifyApiKey: dummy-helm-value
+  messageQueueHost: dummy
+  desirabilitySubmittedTopicAddress: desirability-submitted
+  desirabilitySubmittedSubscriptionAddress: desirability-notification
 
 livenessProbe:
   path: /healthz
