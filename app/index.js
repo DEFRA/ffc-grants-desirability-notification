@@ -5,7 +5,7 @@ const init = async () => {
   console.log(`Using Notify API key: ${notifyApiKey}`)
 
   const sendEmailAction = require('./messaging/send-email')
-  require('./messaging/receivers').startNotificationReceiver(sendEmailAction)
+  require('./messaging/receivers').startSubmissionReceiver(sendEmailAction)
 
   await server.start()
   console.log('Server running on %s', server.info.uri)
