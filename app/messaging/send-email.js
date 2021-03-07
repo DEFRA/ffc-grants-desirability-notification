@@ -5,8 +5,8 @@ module.exports = async function (msg, notificationReceiver) {
     console.log(body)
     await notificationReceiver.completeMessage(msg)
   } catch (err) {
-    console.err('Unable to process message')
-    console.err(err)
+    console.error('Unable to process message')
+    console.error(err)
     await notificationReceiver.abandonMessage(msg)
   }
 }
