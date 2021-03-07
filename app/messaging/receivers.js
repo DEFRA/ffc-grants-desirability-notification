@@ -18,8 +18,8 @@ process.on('SIGINT', async () => {
 })
 
 module.exports = {
-  startSubmissionReceived: async function (submissionReceived) {
-    const updateAction = msg => submissionReceived(msg, notificationReceiver)
+  startNotificationReceiver: async function (notificationReceived) {
+    const updateAction = msg => notificationReceived(msg, notificationReceiver)
     notificationReceiver = new MessageReceiver(msgCfg.notificationSubscription, updateAction)
     await notificationReceiver.subscribe()
   }

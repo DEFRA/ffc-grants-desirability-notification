@@ -13,6 +13,5 @@ module.exports = {
     type: 'subscription',
     ...sharedConfig
   },
-  notificationMsgType: 'uk.gov.ffc.grants.submission.received',
   msgSrc: 'ffc-grants-desirability-notification'
 }
