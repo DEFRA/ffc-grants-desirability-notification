@@ -1,10 +1,10 @@
 const msgCfg = require('../config/messaging')
 const { MessageReceiver } = require('ffc-messaging')
 
-let notificationReceiver
+let submissionReceiver
 
 async function stop () {
-  await notificationReceiver.closeConnection()
+  await submissionReceiver.closeConnection()
 }
 
 process.on('SIGTERM', async () => {
@@ -18,9 +18,9 @@ process.on('SIGINT', async () => {
 })
 
 module.exports = {
-  startNotificationReceiver: async function (notificationReceived) {
-    const updateAction = msg => notificationReceived(msg, notificationReceiver)
-    notificationReceiver = new MessageReceiver(msgCfg.notificationSubscription, updateAction)
-    await notificationReceiver.subscribe()
+  startSubmissionReceiver: async function (submissionReceived) {
+    const updateAction = msg => submissionReceived(msg, submissionReceived)
+    submissionReceiver = new MessageReceiver(msgCfg.submissionSubscription, updateAction)
+    await submissionReceiver.subscribe()
   }
 }
