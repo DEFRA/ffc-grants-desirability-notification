@@ -19,7 +19,7 @@ process.on('SIGINT', async () => {
 
 module.exports = {
   startSubmissionReceiver: async function (submissionReceived) {
-    const updateAction = msg => submissionReceived(msg, submissionReceived)
+    const updateAction = msg => submissionReceived(msg, submissionReceiver)
     submissionReceiver = new MessageReceiver(msgCfg.submissionSubscription, updateAction)
     await submissionReceiver.subscribe()
   }

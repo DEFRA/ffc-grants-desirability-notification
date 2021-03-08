@@ -1,12 +1,12 @@
-module.exports = async function (msg, notificationReceiver) {
+module.exports = async function (msg, submissionReceiver) {
   try {
     const { body } = msg
     console.log('Received message:')
     console.log(body)
-    await notificationReceiver.completeMessage(msg)
+    await submissionReceiver.completeMessage(msg)
   } catch (err) {
     console.error('Unable to process message')
     console.error(err)
-    await notificationReceiver.abandonMessage(msg)
+    await submissionReceiver.abandonMessage(msg)
   }
 }
