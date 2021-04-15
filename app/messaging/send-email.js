@@ -15,13 +15,16 @@ module.exports = async function (msg, submissionReceiver) {
     const emailAddress = body.applicantEmail.emailAddress
     const personalisation = body.applicantEmail.details
 
-    notifyClient
-      .sendEmail(templateId, emailAddress, {
+    try {
+      await notifyClient.sendEmail(templateId, emailAddress, {
         personalisation,
         reference: personalisation.referenceNumber
       })
-      .then(response => console.log('SUCCESS SENDING EMAIL'))
-      .catch(err => console.error('FAILED SENDING EMAIL'))
+      console.log('SUCCESS SENDING EMAIL')
+    } catch (err) {
+      console.log('FAILED SENDING EMAIL')
+      console.log(JSON.stringify(err, null, 2))
+    }
 
     await submissionReceiver.completeMessage(msg)
   } catch (err) {
