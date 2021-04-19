@@ -8,7 +8,7 @@ module.exports = async function (msg, submissionReceiver) {
     const { body, correlationId } = msg
 
     console.log('Received message:')
-    console.log(body)
+    console.log(body.applicantEmail)
     console.log(`CorrelationId: ${correlationId}`)
 
     const templateId = body.applicantEmail.notifyTemplate
