@@ -1,8 +1,8 @@
 const appInsights = require('applicationinsights')
-const config = require('../config/server')
+const config = require('../config/general')
 
 function setup () {
-  if (config.appInsights.keys | config.appInsights) {
+  if (config.appInsights && config.appInsights.key) {
     appInsights.setup().start()
     const cloudRoleTag = appInsights.defaultClient.context.keys.cloudRole
     const appName = config.appInsights.role
