@@ -8,13 +8,17 @@ labels: {}
 
 appInsights:
   key: not-a-real-key
-  
+
 azureIdentity:
   clientID: not-a-real-clientID
   resourceID: not-a-real-resourceID
 
 containerConfigMap:
   name: ffc-grants-desirability-notification-config-map
+
+containerSecret:
+  name: ffc-grants-desirability-notification-container-secret
+  type: Opaque
 
 deployment:
   restartPolicy: Always
