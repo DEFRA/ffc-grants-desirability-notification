@@ -16,6 +16,7 @@
     "@hapi/hapi": "^20.0.3",
     "applicationinsights": "^1.8.10",
     "ffc-messaging": "^2.1.1",
+    "joi": "^17.4.0",
     "notifications-node-client": "^5.1.0"
   },
   "devDependencies": {
