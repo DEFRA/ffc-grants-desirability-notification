@@ -1,6 +1,5 @@
 const appInsights = require('applicationinsights')
-const config = require('../config/server')
-
+const config = require('../config/general')
 function setup () {
   if (config.appInsights && config.appInsights.key) {
     appInsights.setup().start()
@@ -9,6 +8,7 @@ function setup () {
     appInsights.defaultClient.context.tags[cloudRoleTag] = appName
   }
 }
+
 function logException (request, event) {
   const client = appInsights.defaultClient
   client?.trackException({
