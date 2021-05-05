@@ -1,4 +1,5 @@
 const protectiveMonitoringServiceSendEvent = require('../services/protective-monitoring-service')
+const appInsights = require('../services/app-insights')
 const notifyConfig = require('../config/notify')
 const NotifyClient = require('notifications-node-client').NotifyClient
 const notifyClient = new NotifyClient(notifyConfig.notifyApiKey)
@@ -20,6 +21,7 @@ module.exports = async function (msg, submissionReceiver) {
   } catch (err) {
     console.log('FAILED SENDING EMAIL')
     console.log(JSON.stringify(err, null, 2))
+    appInsights.logException(err, msg?.correlationId)
     console.error('Abandoning message')
     await submissionReceiver.abandonMessage(msg)
   }
