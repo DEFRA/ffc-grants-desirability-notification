@@ -3,22 +3,31 @@ const NotifyClient = require('notifications-node-client').NotifyClient
 
 const notifyClient = new NotifyClient(notifyConfig.notifyApiKey)
 
+async function callNotify (emailConfig) {
+  const templateId = emailConfig.notifyTemplate
+  const emailAddress = emailConfig.emailAddress
+  const personalisation = emailConfig.details
+
+  await notifyClient.sendEmail(templateId, emailAddress, {
+    personalisation,
+    reference: personalisation.referenceNumber
+  })
+}
+
 module.exports = async function (msg, submissionReceiver) {
   try {
     const { body } = msg
-    const templateId = body.applicantEmail.notifyTemplate
-    const emailAddress = body.applicantEmail.emailAddress
-    const personalisation = body.applicantEmail.details
+    await callNotify(body.applicantEmail)
+    console.log('SUCCESS SENDING EMAIL to applicant')
 
-    await notifyClient.sendEmail(templateId, emailAddress, {
-      personalisation,
-      reference: personalisation.referenceNumber
-    })
+    if (body.agentEmail) {
+      await callNotify(body.agentEmail)
+      console.log('SUCCESS SENDING EMAIL to agent')
+    }
 
-    console.log('SUCCESS SENDING EMAIL')
     await submissionReceiver.completeMessage(msg)
   } catch (err) {
-    console.log('FAILED SENDING EMAIL')
+    console.log('FAILED SENDING EMAILS')
     console.log(JSON.stringify(err, null, 2))
     console.error('Abandoning message')
     await submissionReceiver.abandonMessage(msg)
