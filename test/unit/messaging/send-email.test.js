@@ -11,10 +11,10 @@ jest.mock('../../../app/config/notify')
 jest.mock('notifications-node-client')
 const notifyConfig = require('../../../app/config/notify')
 notifyConfig.notifyApiKey = ''
-const NotifyClient = require('notifications-node-client').NotifyClient
-NotifyClient.mockImplementation(() => {
+const NotifyClient = require('notifications-node-client')
+NotifyClient.NotifyClient = jest.fn().mockImplementation((key) => {
   return {
-    sendEmail: jest.fn((templateId, emailAddress, xyz) => { return true })
+    sendEmail: jest.fn(async (templateId, emailAddress, xyz) => { console.log('yes called'); return true })
   }
 })
 afterEach(() => {
@@ -40,10 +40,15 @@ describe('get send Email setup defined', () => {
           notifyTemplate: '',
           emailAddress: '',
           details: ''
+        },
+        agentEmail: {
+          notifyTemplate: '',
+          emailAddress: '',
+          details: ''
         }
       }
     }
-    await expect(sendEmail(msg, submissionReceiver)).resolved
+    await expect(sendEmail(msg, submissionReceiver)).resolves.not.toThrow()
     expect(submissionReceiver.completeMessage).toHaveBeenCalledTimes(1)
   })
 })

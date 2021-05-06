@@ -1,5 +1,4 @@
 const sharedConfig = {
-  protectiveMonitoringUrl: process.env.PROTECTIVE_MONITORING_URL,
   appInsights: require('applicationinsights'),
   host: process.env.SERVICE_BUS_HOST,
   password: process.env.SERVICE_BUS_PASSWORD,
