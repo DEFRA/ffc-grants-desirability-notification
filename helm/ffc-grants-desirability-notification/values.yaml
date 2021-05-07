@@ -42,6 +42,7 @@ container:
   messageQueueHost: dummy
   desirabilitySubmittedTopicAddress: desirability-submitted
   desirabilitySubmittedSubscriptionAddress: desirability-notification
+  protectiveMonitoringUrl:
 
 livenessProbe:
   path: /healthz

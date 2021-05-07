@@ -10,6 +10,4 @@ const routes = [].concat(
 )
 
 server.route(routes)
-
-require('./services/app-insights').setup()
 module.exports = server

@@ -1,8 +1,8 @@
+const protectiveMonitoringServiceSendEvent = require('../services/protective-monitoring-service')
+const appInsights = require('../services/app-insights')
 const notifyConfig = require('../config/notify')
 const NotifyClient = require('notifications-node-client').NotifyClient
-
 const notifyClient = new NotifyClient(notifyConfig.notifyApiKey)
-
 async function callNotify (emailConfig) {
   const templateId = emailConfig.notifyTemplate
   const emailAddress = emailConfig.emailAddress
@@ -26,9 +26,11 @@ module.exports = async function (msg, submissionReceiver) {
     }
 
     await submissionReceiver.completeMessage(msg)
+    await protectiveMonitoringServiceSendEvent(msg.correlationId, 'FTF-EMAIL-SENT', '0706')
   } catch (err) {
     console.log('FAILED SENDING EMAILS')
     console.log(JSON.stringify(err, null, 2))
+    appInsights.logException(err, msg?.correlationId)
     console.error('Abandoning message')
     await submissionReceiver.abandonMessage(msg)
   }
