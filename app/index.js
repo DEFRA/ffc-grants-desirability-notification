@@ -6,6 +6,7 @@ const init = async () => {
   require('./services/app-insights').setup()
   await server.start()
   console.log('Server running on %s', server.info.uri)
+  console.log('Hot fix off private beta testing')
 }
 
 process.on('unhandledRejection', (err) => {
