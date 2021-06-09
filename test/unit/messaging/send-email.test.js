@@ -41,6 +41,11 @@ describe('get send Email setup defined', () => {
           emailAddress: '',
           details: ''
         },
+        rpaEmail: {
+          notifyTemplate: '',
+          emailAddress: '',
+          details: ''
+        },
         agentEmail: {
           notifyTemplate: '',
           emailAddress: '',
