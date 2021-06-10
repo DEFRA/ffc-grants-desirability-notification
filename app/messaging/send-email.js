@@ -20,6 +20,9 @@ module.exports = async function (msg, submissionReceiver) {
     await callNotify(body.applicantEmail)
     console.log('SUCCESS SENDING EMAIL to applicant')
 
+    await callNotify(body.rpaEmail)
+    console.log('SUCCESS SENDING EMAIL to RPA')
+
     if (body.agentEmail) {
       await callNotify(body.agentEmail)
       console.log('SUCCESS SENDING EMAIL to agent')
