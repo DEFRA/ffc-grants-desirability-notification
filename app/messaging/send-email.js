@@ -17,19 +17,18 @@ async function callNotify (emailConfig) {
 module.exports = async function (msg, submissionReceiver) {
   try {
     const { body } = msg
-    if (body.applicantEmail) {
-      await callNotify(body.applicantEmail)
-      console.log('SUCCESS SENDING EMAIL to applicant')
-    }
+
+    await callNotify(body.applicantEmail)
+    console.log('SUCCESS SENDING EMAIL TO APPLICANT')
 
     if (body.rpaEmail) {
       await callNotify(body.rpaEmail)
-      console.log('SUCCESS SENDING EMAIL to RPA')
+      console.log('SUCCESS SENDING EMAIL TO RPA')
     }
 
     if (body.agentEmail) {
       await callNotify(body.agentEmail)
-      console.log('SUCCESS SENDING EMAIL to agent')
+      console.log('SUCCESS SENDING EMAIL TO AGENT')
     }
 
     await submissionReceiver.completeMessage(msg)
