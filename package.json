@@ -1,6 +1,6 @@
 {
   "name": "ffc-grants-desirability-notification",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Notification sender for submitted EOIs",
   "homepage": "https://github.com/DEFRA/ffc-grants-desirability-notification",
   "main": "app/index.js",
@@ -15,10 +15,10 @@
   "dependencies": {
     "@hapi/hapi": "^20.2.0",
     "applicationinsights": "^1.8.10",
-    "ffc-messaging": "^2.3.3",
+    "ffc-messaging": "^2.4.0",
     "ffc-protective-monitoring": "^1.0.0",
     "joi": "^17.4.3",
-    "notifications-node-client": "^5.1.0"
+    "notifications-node-client": "^5.1.1"
   },
   "devDependencies": {
     "jest": "^27.2.5",
