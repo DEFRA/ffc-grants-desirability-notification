@@ -16,7 +16,7 @@
     "@hapi/hapi": "^20.2.2",
     "applicationinsights": "^1.8.10",
     "ffc-messaging": "^2.4.0",
-    "ffc-protective-monitoring": "^1.0.0",
+    "ffc-protective-monitoring": "^1.0.3",
     "joi": "^17.4.3",
     "notifications-node-client": "^5.1.1"
   },
