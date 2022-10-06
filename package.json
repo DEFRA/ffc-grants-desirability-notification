@@ -14,7 +14,7 @@
   "license": "OGL-UK-3.0",
   "dependencies": {
     "@hapi/hapi": "^20.2.2",
-    "applicationinsights": "^2.3.4",
+    "applicationinsights": "^2.3.5",
     "ffc-messaging": "^2.5.1",
     "ffc-protective-monitoring": "^1.0.3",
     "joi": "^17.4.3",
