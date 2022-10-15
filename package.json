@@ -17,7 +17,7 @@
     "applicationinsights": "^2.3.4",
     "ffc-messaging": "^2.5.1",
     "ffc-protective-monitoring": "^1.0.3",
-    "joi": "^17.4.3",
+    "joi": "^17.6.1",
     "notifications-node-client": "^5.1.1"
   },
   "overrides": {
