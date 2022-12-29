@@ -18,7 +18,7 @@
     "ffc-messaging": "^2.5.1",
     "ffc-protective-monitoring": "^1.0.3",
     "joi": "^17.7.0",
-    "notifications-node-client": "^5.2.1"
+    "notifications-node-client": "^6.0.0"
   },
   "overrides": {
     "got": "^12.1.0"
