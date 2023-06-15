@@ -30,6 +30,7 @@ describe('setup()', () => {
     jest.clearAllMocks()
   })
   test('Should not setup appInsight without config key', () => {
+    config.appInsights.key = null
     const setupSpy = jest.spyOn(appInsights, 'setup')
 
     appInsight.setup()
