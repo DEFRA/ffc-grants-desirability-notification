@@ -75,17 +75,3 @@ describe('logException()', () => {
     expect(mockTrackException).toHaveBeenCalledTimes(1)
   })
 })
-
-
-// TODO: rm this BS!
-// describe('get appInsight setup defined', () => {
-//   test('Should be defined', () => {
-//     expect(appInsight).toBeDefined()
-//   })
-//   test('Without key Should not to throw', () => {
-//     expect(appInsight.setup()).toBe(undefined)
-//   })
-//   test('logException should run', () => {
-//     expect(appInsight.logException(new Error(''), '12341234')).toBe(undefined)
-//   })
-// })
