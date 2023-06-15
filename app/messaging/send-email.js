@@ -1,3 +1,4 @@
+require('dotenv').config()
 const protectiveMonitoringServiceSendEvent = require('../services/protective-monitoring-service')
 const appInsights = require('../services/app-insights')
 const notifyConfig = require('../config/notify')
