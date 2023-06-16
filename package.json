@@ -1,11 +1,12 @@
 {
   "name": "ffc-grants-desirability-notification",
-  "version": "1.14.2",
+  "version": "1.14.3",
   "description": "Notification sender for submitted EOIs",
   "homepage": "https://github.com/DEFRA/ffc-grants-desirability-notification",
   "main": "app/index.js",
   "scripts": {
     "test": "jest --runInBand",
+    "test:watchAll": "jest --coverage=true --watchAll --runInBand",
     "test:watch": "jest --coverage=false --onlyChanged --watch --runInBand",
     "start:watch": "nodemon --inspect=0.0.0.0 --ext js --legacy-watch app/index.js"
   },
@@ -24,6 +25,7 @@
     "got": "^12.1.0"
   },
   "devDependencies": {
+    "dotenv": "^16.1.4",
     "jest": "^27.2.5",
     "jest-junit": "^13.0.0",
     "nodemon": "^2.0.7",
