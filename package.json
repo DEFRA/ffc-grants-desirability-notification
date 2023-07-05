@@ -24,7 +24,8 @@
   "overrides": {
     "got": "^12.1.0",
     "semver": "^7.3.5",
-    "word-wrap": "^1.2.3"
+    "word-wrap": "^1.2.3",
+    "optionator": "^0.9.1"
   },
   "devDependencies": {
     "dotenv": "^16.1.4",
