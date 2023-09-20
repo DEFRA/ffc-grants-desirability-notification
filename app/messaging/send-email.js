@@ -18,6 +18,8 @@ module.exports = async function (msg, submissionReceiver) {
   try {
     const { body } = msg
 
+    console.log('VARIABLES FOR EMAIL TEMPLATE: ', body)
+
     await callNotify(body.applicantEmail)
     console.log('SUCCESS SENDING EMAIL TO APPLICANT')
 
