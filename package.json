@@ -14,12 +14,12 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
-    "@hapi/hapi": "^20.2.2",
-    "applicationinsights": "^2.4.0",
-    "ffc-messaging": "^2.5.1",
+    "@hapi/hapi": "^20.3.0",
+    "applicationinsights": "^2.9.1",
+    "ffc-messaging": "^2.8.0",
     "ffc-protective-monitoring": "^1.0.3",
     "joi": "^17.7.0",
-    "notifications-node-client": "^7.0.4"
+    "notifications-node-client": "^7.0.5"
   },
   "overrides": {
     "got": "^12.1.0",
