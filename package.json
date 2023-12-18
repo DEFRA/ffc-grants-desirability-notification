@@ -1,6 +1,6 @@
 {
   "name": "ffc-grants-desirability-notification",
-  "version": "1.14.9",
+  "version": "1.14.10",
   "description": "Notification sender for submitted EOIs",
   "homepage": "https://github.com/DEFRA/ffc-grants-desirability-notification",
   "main": "app/index.js",
