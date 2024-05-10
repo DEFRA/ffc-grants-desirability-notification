@@ -25,7 +25,8 @@
     "got": "^14.0.0",
     "semver": "^7.5.4",
     "word-wrap": "^1.2.5",
-    "optionator": "^0.9.3"
+    "optionator": "^0.9.3",
+    "axios": "^1.6.8"
   },
   "devDependencies": {
     "dotenv": "^16.1.4",
